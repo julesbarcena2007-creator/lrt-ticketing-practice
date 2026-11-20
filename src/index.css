@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+.page {
+   @apply min-h-screen text-slate-900 bg-gray-100
+}
+
+.container {
+    @apply flex items-center justify-center 
+    text-3xl font-bold text-center p-5 mt-20 bg-blue-100
+    rounded-xl w-fit mx-auto gap-3
+
+}
+
+.header_con {
+  @apply flex justify-start pl-20 pt-10
+}
+
+.header {
+  @apply flex flex-row items-center gap-3
+  text-3xl font-bold p-5 
+}
+
+.button-container {
+    @apply flex gap-4 justify-center 
+}
+
+.button_1{
+    @apply bg-red-500 text-white font-bold py-2 px-4 rounded hover:bg-red-700 
+}
+
+.button_2{
+    @apply bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700
+}
+
+.containerStations {
+    @apply flex items-center justify-center gap-4 mt-10 
+}
+
+.stationsContainer {
+    @apply grid grid-cols-1 sm:grid-cols-2 items-center justify-center gap-5 m-5 
+}
+
+.stationButton {
+    @apply flex justify-center p-5 w-100 bg-blue-100  rounded-lg shadow-md
+}
+
+.stationButton:hover {
+    @apply bg-gray-200
+}
