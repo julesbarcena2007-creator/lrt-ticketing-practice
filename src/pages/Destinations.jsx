@@ -2,14 +2,20 @@ import { useState } from "react"
 import App from "../App"
 import Origin from "./Origin"
 
-function Destination ({setPage, selectedStation, setSelectedStation, stations}) {
+function Destination ({setPage, selectedStation, setSelectedStation, stations, selectedDestination, setSelectedDestination}) {
     const base = 10
     const increment = 0.30
     
 
-    function chooseStation (x, index) {
-        setSelectedStation(x)
-        console.log(x, index)
+    function chooseStation (station, index) {
+        const destination = {station: station, index: index}
+        setSelectedDestination(destination)
+        console.log(station, index)
+        setPage("computeTotal")
+    }
+
+    function goToComputeTotal () {
+        setPage("computeTotal")
     }
 
 

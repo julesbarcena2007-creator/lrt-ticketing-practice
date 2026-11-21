@@ -9,8 +9,8 @@ function Origin ({setPage, setSelectedStation, selectedStation, stations}) {
   
 
     function chooseStation (station, index) {
-        setSelectedStation(station, index)
-        console.log(station, index)
+        const originStation = {station: station, index: index}
+        setSelectedStation(originStation)
         setPage("destination")
     }
 

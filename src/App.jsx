@@ -4,11 +4,13 @@ import Welcome from "./pages/Welcome"
 import Destination from "./pages/Destinations"
 import Compute from "./pages/Compute"
 import Origin from "./pages/Origin"
+import ComputeTotal from "./pages/ComputeTotale"
 
 function App() {
   const [page, setPage] = useState()
   const payment = 20
   const [selectedStation, setSelectedStation] = useState({})
+  const [selectedDestination, setSelectedDestination] = useState({})
   const stations = ["Antipolo", "Marikina", "Santolan", "Katipunan", "Anonas", "Cubao", "Betty go", "Gilmore", "J. ruiz", "V. mapa", "Pureza", "Legarda", "Recto"]
 
   if (page == "welcome") {
@@ -20,12 +22,27 @@ function App() {
   }
 
   if (page == "destination") {
-    return <Destination setPage={setPage} selectedStation={selectedStation} setSelectedStation={setSelectedStation} stations={stations}/>
+    return <Destination 
+    setPage={setPage}
+    selectedStation={selectedStation}
+    setSelectedStation={setSelectedStation}
+    stations={stations}
+    selectedDestination={selectedDestination}
+    setSelectedDestination={setSelectedDestination}/>
   }
     
 
   if (page == "compute") {
     return <Compute payment={payment} name={"jules"}/>
+  }
+
+  if (page == "computeTotal") {
+    return <ComputeTotal setPage={setPage}
+    setSelectedDestination={setSelectedDestination}
+    selectedDestination={selectedDestination}
+    selectedStation={selectedStation}
+    setSelectedStation={setSelectedStation}
+    />
   }
 
   
@@ -44,6 +61,10 @@ function App() {
 
   function goToDestination () {
     setPage("destination")
+  }
+
+  function goToComputeTotal () {
+    setPage ("computeTotal")
   }
 
 
